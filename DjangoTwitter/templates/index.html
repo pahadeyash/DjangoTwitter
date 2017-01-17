@@ -1,0 +1,49 @@
+{% extends 'twitter_app/base.html' %}
+
+{% load static %}
+
+{% block title %}Index{% endblock %}
+
+{% block body_block %}
+<div style = "margin: 20px 20px 20px 20px">
+  <div class="hero-unit" style = "text-align: center">
+      <h1>Twitter Clone</h1>
+      This is the <strong> Twitter clone's home page</strong>.<br />
+
+      Built using the Python Web framework: <strong> Django <strong> <br />
+      <br>
+      <img src="{% static 'Twitter_logo.png' %}" alt="Picture of Twitter logo" style = "height: 200px; width: 200px">
+  </div>
+  <div class="row-fluid">
+              <div class="span4">
+                <h2>Features</h2>
+                <ul>
+                  <li> Multiple Users and Registration
+                  <li> Posting status updates
+                  <li> Liking status updates
+                  <li> Following people
+                  <li> Viewing a timeline of recent posts by people you follow
+                </ul>
+                <p>
+              </div><!--/span-->
+              <div class="span4">
+                <h2>Tools</h2>
+                <ul>
+                  <li> Python 2.7.10
+                  <li> Django 1.5.4
+                  <li> Bootstrap
+                </ul>
+                </p>
+              </div><!--/span-->
+              <div class="span4">
+                <h2>Resources</h2>
+                <ul>
+                  <li> <a href = "http://tango-with-django.readthedocs.io/en/latest/index.html"> Tango With Django </a>
+                  <li> <a href = "http://getbootstrap.com/getting-started/"> Bootstrap </a>
+                  <li> <a href = "https://docs.djangoproject.com/en/1.10/howto/initial-data/"> Providing django with initial data </a>
+                </ul>
+                <p>
+                </p>
+              </div><!--/span-->
+</div>
+{% endblock %}
