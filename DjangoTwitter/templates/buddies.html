@@ -1,0 +1,31 @@
+{% extends 'twitter_app/base.html' %}
+
+{% block body_block %}
+<!--     <div class="panel right">
+ -->        <h1>Create a Tweet</h1>
+            <form action="/submit" method="post">
+            {% for field in twitter_form %}{% csrf_token %}
+            {{ field }}
+            {% endfor %}
+            <input value="{{ next_url }}" name="next_url">
+            <input type="submit" value="Tweet!">
+            </form>
+<!--     </div> -->
+    <div class="panel left">
+        <h1>Twitter Feed</h1>
+            {% for tweet in tweets %}
+            <div class="tweetWrapper">
+                <a href="/users/{{ tweet.user.username }}">
+                    <img class="avatar" src="{{ tweet.user.profile.gravatar_url }}">
+                    <span class="name">{{ tweet.user.first_name }}</span>
+                </a>
+                @{{ tweet.user.username }}
+                <p>
+                    {{ tweet.content }}
+                </p>
+                <p> Likes: {{tweet.likes}} 
+            </div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}
